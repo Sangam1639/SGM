@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full Page Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background-image: url('Paraa.jpg'); /* Replace with your bike image URL */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glowing text animation */
+    .glowing-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 50px;
+      font-weight: 600;
+      color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff0080, 0 0 15px #ff0080, 0 0 20px #ff0080, 0 0 25px #ff0080; }
+      100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff; }
+    }
+
+    /* Card Styling */
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+      text-align: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+      50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+    }
+
+    /* Thank You Message Styling */
+    .thank-you-message {
+      font-size: 24px;
+      color: #ff6f61;
+      font-weight: bold;
+    }
+
+    .sub-message {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Thank You Card -->
+  <div class="card">
+    <div class="glowing-text">Thank You!</div>
+    <p class="thank-you-message">We Appreciate Your Submission!</p>
+    <p class="sub-message">Our team will get back to you soon.</p>
+    <a href="index.html" class="button">Go Back to Home</a>
+  </div>
+
+  <script>
+    // Optional JavaScript for future interactivity if needed
+    console.log("Thank You Page Loaded");
+  </script>
+
+</body>
+</html>

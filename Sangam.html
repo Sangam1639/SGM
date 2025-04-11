@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dreamy Form</title>
+  <style>
+    /* Basic Reset and Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #2a0845 0%, #0f0c29 100%);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Floating Lights (Stars) */
+    .star {
+      position: absolute;
+      background: #99faff;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Glassy 3D Form */
+    form {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(140, 0, 255, 0.4);
+      backdrop-filter: blur(20px);
+      padding: 35px 45px;
+      border-radius: 20px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transform-style: preserve-3d;
+      transform: rotateX(10deg) rotateY(-5deg);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(10deg) rotateY(-5deg); }
+      50% { transform: translateY(-15px) rotateX(12deg) rotateY(0deg); }
+    }
+
+    input, select {
+      padding: 12px 15px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #eeeeee;
+      color: #2a0845;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #a66cff;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(166, 108, 255, 0.6);
+      outline: none;
+    }
+
+    label {
+      font-weight: 600;
+      color: #d8b4ff;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background: linear-gradient(to right, #00ffae, #6f00ff);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 255, 174, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px rgba(0, 255, 174, 0.8);
+    }
+
+  </style>
+</head>
+<body>
+
+  <form action="submit.html">
+    <input type="text" placeholder="Username" required>
+    <input type="password" placeholder="Password" required>
+    <input type="number" placeholder="Phone Number" required>
+    <input type="email" placeholder="Email" required>
+
+    <label for="bikes">Choose a bike:</label>
+    <select name="bikes" id="bikes" required>
+      <option value="">-- Select a bike --</option>
+      <option value="Duke">Duke 390</option>
+      <option value="Bullet">Reborn 350</option>
+      <option value="NS">NS 400</option>
+      <option value="MT15">MT15 V2</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Create Floating Stars
+    const count = 70;
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.width = `${Math.random() * 2 + 1}px`;
+      star.style.height = `${Math.random() * 2 + 1}px`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.top = `${Math.random() * -100}vh`;
+      star.style.animationDuration = `${Math.random() * 4 + 3}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
